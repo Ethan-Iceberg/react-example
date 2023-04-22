@@ -12,16 +12,16 @@ function Example1() {
 
   return (
     <>
-    <div>
-      {data.map(item => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <p>{item.description}</p>
-        </div>
-      ))}
-    </div>
+      <div>
+        {data.map(item => (
+          <div key={item.id}>
+            <p>{item.name}</p>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
 
-export default DashBoard;
+export default Example1;

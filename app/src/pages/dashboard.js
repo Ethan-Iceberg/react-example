@@ -1,24 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function DashBoard() {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    axios.get('/api/data')
-      .then(res => setData(res.data))
-      .catch(err => console.log(`Error fetching data: ${err}`));
-  }, []);
+  const myData = {
+    name: 'Some thing',
+    price: 123
+  }
 
   return (
     <>
-    <div>
-      {data.map(item => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-        </div>
-      ))}
-    </div>
+      <Link to={"../example1"}>
+        <div>way to data from DB</div>
+      </Link>
+      <Link to={"../example2"} state={myData}>
+        <div>props test between pages</div>
+      </Link>
+      <Link to={"../example3"}>
+        <div>usestate</div>
+      </Link>
+      <Link to={"../example4"}>
+        <div>import js</div>
+      </Link>
+
     </>
   );
 }
