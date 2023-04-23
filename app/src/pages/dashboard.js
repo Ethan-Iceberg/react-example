@@ -22,6 +22,9 @@ function DashBoard() {
       <Link to={"../example4"}>
         <div>import js</div>
       </Link>
+      <Link to={"../example5"}>
+        <div>import js</div>
+      </Link>
 
     </>
   );
