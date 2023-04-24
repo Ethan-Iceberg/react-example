@@ -23,7 +23,10 @@ function DashBoard() {
         <div>import js</div>
       </Link>
       <Link to={"../example5"}>
-        <div>import js</div>
+        <div>redux</div>
+      </Link>
+      <Link to={"../example6"}>
+        <div>way to data from DB for argument</div>
       </Link>
 
     </>
