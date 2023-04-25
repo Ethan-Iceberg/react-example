@@ -7,6 +7,7 @@ import Example3 from './pages/example3';
 import Example4 from './pages/example4';
 import Example5 from './pages/example5';
 import Example6 from './pages/example6';
+import Example7 from './pages/example7';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/example4" element={<Example4 />}></Route>
         <Route path="/example5" element={<Example5 />}></Route>
         <Route path="/example6" element={<Example6 />}></Route>
+        <Route path="/example7" element={<Example7 />}></Route>
       </Routes>
     </BrowserRouter>
   )

@@ -28,6 +28,9 @@ function DashBoard() {
       <Link to={"../example6"}>
         <div>way to data from DB for argument</div>
       </Link>
+      <Link to={"../example7"}>
+        <div>ajax fetch(json) example</div>
+      </Link>
 
     </>
   );

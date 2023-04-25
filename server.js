@@ -53,5 +53,23 @@ app.get('/api/users/:id', (req, res) => {
     });
 });
 
+app.get('/api/example/:id', async (req, res) => {
+  const id = req.params.id;
+  const conn = await pool.getConnection();
+  try {
+    const rows = await conn.query(`SELECT * FROM ids WHERE id = ${id}`);
+    if (rows.length === 0) {
+      res.status(404).json({ message: 'Data not found' });
+    } else {
+      res.json(rows[0]);
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Server error' });
+  } finally {
+    conn.release();
+  }
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`));
