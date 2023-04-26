@@ -31,6 +31,15 @@ function DashBoard() {
       <Link to={"../example7"}>
         <div>ajax fetch(json) example</div>
       </Link>
+      <Link to={"../example8"}>
+        <div>navigate to example9</div>
+      </Link>
+      <Link to={"../example9"}>
+        <div>goback example</div>
+      </Link>
+      <Link to={"../example10"}>
+        <div>Insert example</div>
+      </Link>
 
     </>
   );

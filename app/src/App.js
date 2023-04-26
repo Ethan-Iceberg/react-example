@@ -8,6 +8,9 @@ import Example4 from './pages/example4';
 import Example5 from './pages/example5';
 import Example6 from './pages/example6';
 import Example7 from './pages/example7';
+import Example8 from './pages/example8';
+import Example9 from './pages/example9';
+import Example10 from './pages/example10';
 
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
         <Route path="/example5" element={<Example5 />}></Route>
         <Route path="/example6" element={<Example6 />}></Route>
         <Route path="/example7" element={<Example7 />}></Route>
+        <Route path="/example8" element={<Example8 />}></Route>
+        <Route path="/example9" element={<Example9 />}></Route>
+        <Route path="/example10" element={<Example10 />}></Route>
       </Routes>
     </BrowserRouter>
   )

@@ -71,5 +71,24 @@ app.get('/api/example/:id', async (req, res) => {
   }
 });
 
+app.post('/api/insertdata', (req, res) => {
+  pool.getConnection()
+    .then(conn => {
+      const { name, age } = req.body;
+      conn.query('INSERT INTO names (name, age) VALUES (?, ?)', [name, age])
+        .then(() => {
+          conn.release();
+          res.json({ message: 'Data inserted successfully' });
+        })
+        .catch(err => {
+          conn.release();
+          res.status(500).json({ error: err });
+        });
+    })
+    .catch(err => {
+      res.status(500).json({ error: err });
+    });
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`));
