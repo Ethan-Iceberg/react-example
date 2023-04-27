@@ -40,6 +40,9 @@ function DashBoard() {
       <Link to={"../example10"}>
         <div>Insert example</div>
       </Link>
+      <Link to={"../example11"}>
+        <div>Table Example Code</div>
+      </Link>
 
     </>
   );
