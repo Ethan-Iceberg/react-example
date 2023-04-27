@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const pool = mariadb.createPool({
   host: 'localhost',
@@ -15,7 +16,7 @@ const pool = mariadb.createPool({
   database: 'web'
 });
 
-app.get('/api/data', (req, res) => {
+app.get(apiUrl+'/api/data', (req, res) => {
   pool.getConnection()
     .then(conn => {
       conn.query('SELECT * FROM users')

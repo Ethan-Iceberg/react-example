@@ -3,9 +3,10 @@ import axios from 'axios';
 
 function Example1() {
   const [data, setData] = useState([]);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    axios.get('/api/data')
+    axios.get(apiUrl+'/api/data')
       .then(res => setData(res.data))
       .catch(err => console.log(`Error fetching data: ${err}`));
   }, []);

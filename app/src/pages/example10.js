@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function example10() {
+function Example10() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
 
@@ -45,4 +45,4 @@ function example10() {
   );
 }
 
-export default example10;
+export default Example10;
