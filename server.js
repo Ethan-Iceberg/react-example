@@ -90,5 +90,25 @@ app.post('/api/insertdata', (req, res) => {
     });
 });
 
+// Insert data into database
+app.post('/api/inserttbdata', (req, res) => {
+  const data = req.body.rows;
+  const query = 'INSERT INTO intb (id, name, value) VALUES (?, ?, ?)';
+  pool.getConnection()
+  .then(conn => {
+  // Execute the MySQL insert statement for each row of data
+  data.forEach(item => {
+    conn.query(query, [parseInt(item.id), item.name, parseInt(item.value)], (error, results) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send('Server error');
+      }
+    });
+  });
+})
+
+  res.status(200).send('Data inserted successfully');
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`));

@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import "../css/tb.css";
 import MyTable from './tbfolder/modify';
+import InsertTable from './tbfolder/insert';
 
 function Example11() {
     const [rows, setRows] = useState([]);
@@ -32,6 +33,7 @@ function Example11() {
         </table>
       </div>
       <MyTable></MyTable>
+      <InsertTable></InsertTable>
       </>
     );
   }
